@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
+=======
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+# Format documentation: http://kicad-pcb.org/help/file-formats/
+>>>>>>> 782ad2b (Initial Commit -- just op-amp based monostable multivibrator)
 
 # Temporary files
 *.000
@@ -15,12 +20,15 @@
 ~*
 _autosave-*
 \#auto_saved_files\#
+*.sch-bak
+*~
 *.tmp
 *-save.pro
 *-save.kicad_pcb
 fp-info-cache
 ~*.lck
 \#auto_saved_files#
+MainBoard/MainBoard-backups/
 
 # Netlist files (exported from Eeschema)
 *.net
