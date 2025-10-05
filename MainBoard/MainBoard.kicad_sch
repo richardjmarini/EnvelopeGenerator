@@ -2242,7 +2242,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO:\nAdd Rail Clamps to limit output to supply voltages\nAdd resister on output to for reverse input protection\nAdd rail Clamps to input signal\nAdd reister on input for protection\nSwap R3 w/ POT to control decay\nSwap R0 w/ POT to control attack\nAdopt Trigger input to be Gate input\nUse Gate falling edge to control when release starts\nUse comparator w/ POT to control threshold to determine sustain level\nKeep in mind the need for a diode switching circuit\n\n"
+	(text "TODO:\nAdd Rail Clamps to limit output to supply voltages\nAdd rail Clamps to limit input signal to supply voltages\nAdd resister to input signal for protection\nSwap R3 w/ POT to control decay\nSwap R0 w/ POT to control attack\nAdopt Trigger input to be Gate input\nUse Gate falling edge to control when release starts\nUse comparator w/ POT to control threshold to determine sustain level\nKeep in mind the need for a diode switching circuit\n\n"
 		(exclude_from_sim no)
 		(at 203.2 47.244 0)
 		(effects
