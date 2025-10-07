@@ -2242,7 +2242,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 10u 10us\n.control\nrun\nplot v(Gate) v(Output) V(Net-_D1-K_) V(Net-_D1-A_) v(Net-_D6-A_)\nplot i(R0) i(R1) i(R2) i(R3) i(C2) i(C8) i(D1) i(D6)\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 10u 250us\n.control\nrun\nplot v(Gate) v(Output) V(Net-_D1-K_) V(Net-_D1-A_) v(Net-_D6-A_)\nplot i(R0) i(R1) i(R2) i(R3) i(C2) i(C8) i(D1) i(D6)\n.endc\n"
 		(exclude_from_sim no)
 		(at 40.386 127.254 0)
 		(effects
@@ -2460,7 +2460,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 60.96) (xy 208.28 60.96)
+			(xy 208.28 60.96) (xy 213.36 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2720,6 +2720,26 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 60.96) (xy 200.66 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "424e7dec-92ad-4ddb-9cef-bccc5501a222")
+	)
+	(wire
+		(pts
+			(xy 168.91 60.96) (xy 195.58 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43a3c2d8-191b-471e-90b7-5a7e3f19cc8e")
+	)
+	(wire
+		(pts
 			(xy 157.48 40.64) (xy 154.94 40.64)
 		)
 		(stroke
@@ -2807,16 +2827,6 @@
 			(type default)
 		)
 		(uuid "57b1d08e-c7c3-405d-b4a2-09838c931f70")
-	)
-	(wire
-		(pts
-			(xy 195.58 60.96) (xy 168.91 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5afab46c-e10b-4e9e-bfba-dbdec4daebfe")
 	)
 	(wire
 		(pts
@@ -2910,7 +2920,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 72.39) (xy 213.36 69.85)
+			(xy 213.36 69.85) (xy 213.36 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3160,7 +3170,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 80.01) (xy 226.06 60.96)
+			(xy 226.06 60.96) (xy 226.06 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3417,16 +3427,6 @@
 			(type default)
 		)
 		(uuid "dd1d887f-972a-4c34-889a-d5ef2bb2da5e")
-	)
-	(wire
-		(pts
-			(xy 200.66 60.96) (xy 195.58 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df7094df-8201-4030-bc35-c92a0cc8ceaa")
 	)
 	(wire
 		(pts
@@ -5660,7 +5660,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nf"
+		(property "Value" "1uf"
 			(at 172.72 46.228 90)
 			(effects
 				(font
@@ -6074,7 +6074,7 @@
 				)
 			)
 		)
-		(property "Value" "15K"
+		(property "Value" "30k"
 			(at 193.04 45.72 90)
 			(effects
 				(font
