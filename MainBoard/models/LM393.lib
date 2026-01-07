@@ -1,0 +1,5 @@
+* Minimal ngspice-compatible LM393-style comparator
+.SUBCKT LM393 INP INM VCC VEE OUT
+BOUT OUT VEE I = { V(INP,INM) < 0 ? 5m : 0 }
+.ENDS LM393
+
