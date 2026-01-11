@@ -1,15 +1,21 @@
 .SUBCKT LM393 INP INM VCC VEE OUT
 
-* Smooth comparator transfer (tanh avoids discontinuity)
-BCTRL CTRL 0 V = { 0.5*(1 + tanh(100*(V(INP,INM)))) }
+* --- Bounded comparator core ---
+* Produces about ±5 V max, regardless of input abuse
+BERR ERR 0 V={5*tanh(200*V(INP,INM))}
 
-* Make CTRL a real node
-RCTRL CTRL 0 100k
-CCTRL CTRL 0 1p
+* DC path for solver
+RERR ERR 0 1Meg
 
-* Open collector switch
-.model SW_OC SW(Ron=100 Roff=1e12 Vt=0.5 Vh=0)
-SOUT OUT VEE CTRL 0 SW_OC
+* --- Output NPN open collector ---
+QOUT OUT BASE VEE QNPN
+RB BASE ERR 10k
+RBLEED BASE VEE 100k
+
+* Output leakage (prevents floating nodes)
+RLEAK OUT VEE 100Meg
+
+.model QNPN NPN Is=1e-15 Bf=100 Vaf=100 Cjc=2p Cje=5p
 
 .ENDS LM393
 
