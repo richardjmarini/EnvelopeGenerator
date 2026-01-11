@@ -1,21 +1,57 @@
-.SUBCKT LM393 INP INM VCC VEE OUT
+* DUAL OPERATIONAL AMPLIFIER
+* (LMx93 X 2 OPERATIONAL AMPLIFIERS)
+*
+* SPICE (Simulation Program with Integrated Circuit Emphasis)
+* SUBCIRCUIT
+*
+.SUBCKT LM393 1 2 3 4 5 6 7 8
+XA 3 2 8 4 1 LMx93
+XB 5 6 8 4 7 LMx93
+.ENDS
+*
+*
+* Connections:
+*                NON-INVERTING INPUT
+*                |   INVERTING INPUT
+*                |   |   POSITIVE POWER SUPPLY
+*                |   |   |   NEGATIVE POWER SUPPLY
+*                |   |   |   |   OUTPUT
+*                |   |   |   |   | 
+.SUBCKT LMx93    1   2   11  12  24
 
-* --- Bounded comparator core ---
-* Produces about ±5 V max, regardless of input abuse
-BERR ERR 0 V={5*tanh(200*V(INP,INM))}
+***** Input Stage *****
+Q_Q1 4 1 6 QPNP1
+Q_Q2 7 2 9 QPNP2
+I_I1 111 10 DC 0.6m
+R_RC1 4 12 95.49
+R_RC2 7 12 95.49
+R_RE1 10 6 45.49
+R_RE2 10 9 45.49
 
-* DC path for solver
-RERR ERR 0 1Meg
+***** Gain Stage & Frequency Response Stage *****
+E_Eref 14 0 poly(2) (12,0) (11,0) 0 0.09091 0.09091
+R_Rgnd 11 0 100k
+I_Ignd 0 11 0.24m
+Vsup 111 11 0
+G_Ignd 0 11 poly(1) (11,0) 0 0.00678m
+G_G1 14 15 7 4 0.01047
+R_Rc 14 15 26.3Meg
+C_Cc 14 15 0.00667n
 
-* --- Output NPN open collector ---
-QOUT OUT BASE VEE QNPN
-RB BASE ERR 10k
-RBLEED BASE VEE 100k
+***** Output Stage *****
+E_E1 22 14 15 14 1
+V_F1 23 24 0
+F_F1 11 0 V_F1 1
+R_Rout 22 23 13
 
-* Output leakage (prevents floating nodes)
-RLEAK OUT VEE 100Meg
+***** Output Voltage Limiting *****
+D_D1 15 18 D10D1
+D_D2 19 15 D10D1
+V_Voh 111 18 0.62
+V_Vol 19 12 0.62
 
-.model QNPN NPN Is=1e-15 Bf=100 Vaf=100 Cjc=2p Cje=5p
-
-.ENDS LM393
-
+***** Models *****
+.model QPNP1 PNP(Is=1E-15 Bf=8293.8)
+.model QPNP2 PNP(Is=1E-15 Bf=9663.8)
+.MODEL D10D1 D IS=1E-15 RS=1.000E-3 VJ=.75 BV=100E6
+.ENDS
