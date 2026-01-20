@@ -4982,6 +4982,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 40.64) (xy 189.23 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da29c535-d6b8-410e-b7d5-e5d81c19e637")
+	)
+	(wire
+		(pts
 			(xy 257.81 59.69) (xy 265.43 59.69)
 		)
 		(stroke
@@ -5129,16 +5139,6 @@
 			(type default)
 		)
 		(uuid "f068d914-7355-48e9-9b3c-d9eebfa5066b")
-	)
-	(wire
-		(pts
-			(xy 189.23 40.64) (xy 121.92 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0ab1acf-9dc9-4406-a9ab-0a250b244cbb")
 	)
 	(wire
 		(pts
@@ -6953,7 +6953,7 @@
 			)
 		)
 		(property "Sim.Params" "Rtot=100k w=0.5"
-			(at 181.61 88.9 0)
+			(at 181.61 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7999,7 +7999,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Library" "models/BC557B.lib"
+		(property "Sim.Library" "models/BC557.lib"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -8008,7 +8008,34 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Name" "BC557B"
+		(property "Sim.Name" "BC557"
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "GUMMELPOON"
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -10809,7 +10836,7 @@
 			)
 		)
 		(property "Sim.Params" "Rtot=100k w=0.5"
-			(at 181.61 74.93 0)
+			(at 181.61 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
