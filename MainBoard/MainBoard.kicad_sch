@@ -2861,16 +2861,6 @@
 		)
 		(uuid "9419998d-8e0a-4330-b89e-10ea0144d045")
 	)
-	(text "Non-Inverting\nAmplifier"
-		(exclude_from_sim no)
-		(at 127.762 36.322 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ad3b0c7c-6fc9-4814-bbc9-f6a5af895d54")
-	)
 	(text "Release"
 		(exclude_from_sim no)
 		(at 181.864 82.042 0)
@@ -2881,7 +2871,7 @@
 		)
 		(uuid "d173ba8e-3505-492e-8a94-7d9bbbf8a1f9")
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_R7-Pad2_) v(Envelope) + 0.25\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_R7-Pad2_) + 0.25 v(Envelope) v(Output)\nplot v(Envelope) v(Net-_U2C--_) + 0.25 v(Net-_R12-Pad2_) + 0.35 v(Output) + 0.45\n.endc\n"
 		(exclude_from_sim no)
 		(at 17.272 156.718 0)
 		(effects
@@ -5022,6 +5012,28 @@
 			)
 		)
 	)
+	(global_label "Envelope"
+		(shape input)
+		(at 220.98 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2f8ecfd7-2de1-476d-ac90-d201520495bc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 209.5888 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "+v"
 		(shape input)
 		(at 175.26 63.5 90)
@@ -5084,28 +5096,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Envelope"
-		(shape input)
-		(at 220.98 57.15 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6a42f7d5-42f0-48fd-938b-6f7fc890a97f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 209.5888 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -10308,7 +10298,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "47k"
 			(at 234.442 70.866 90)
 			(effects
 				(font
@@ -10887,7 +10877,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "10k"
 			(at 223.266 76.708 90)
 			(effects
 				(font
