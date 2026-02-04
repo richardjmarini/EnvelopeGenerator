@@ -2371,6 +2371,229 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Transistor_BJT:BC557"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "BC557"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "PNP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=C 2=B 3=E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "PNP Transistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO?92*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BC557_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -1.778) (xy 1.778 -2.286) (xy 1.27 -1.27) (xy 2.286 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "BC557_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+12V"
 			(power)
 			(pin_numbers
@@ -2871,7 +3094,7 @@
 		)
 		(uuid "d173ba8e-3505-492e-8a94-7d9bbbf8a1f9")
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_R7-Pad2_) + 0.25 v(Envelope) v(Output)\nplot v(Envelope) v(Net-_U2C--_) + 0.25 v(Net-_R12-Pad2_) + 0.35 v(Output) + 0.45\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_Q2-C_) + 0.25 v(Envelope) v(Output)\nplot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n.endc\n"
 		(exclude_from_sim no)
 		(at 17.272 156.718 0)
 		(effects
@@ -3053,10 +3276,10 @@
 		(uuid "a637a4ce-ec09-40c8-b902-ce48c50ae1ba")
 	)
 	(junction
-		(at 139.7 50.8)
+		(at 121.92 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b84ac8df-15b3-4fc5-95c3-c23b4d4ff66d")
+		(uuid "b01015be-6a0d-4176-b6e4-6c89f4225939")
 	)
 	(junction
 		(at 57.15 50.8)
@@ -3069,6 +3292,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cdace5a8-4485-4c93-b614-f053706ee749")
+	)
+	(junction
+		(at 139.7 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce11dc81-0bbe-4cf7-ad32-f3c733521e41")
 	)
 	(junction
 		(at 138.43 132.08)
@@ -3107,12 +3336,6 @@
 		(uuid "f3932fb8-1e1a-4730-a257-3ad8747ec63c")
 	)
 	(junction
-		(at 121.92 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f3a0d02c-60c8-49bd-abe5-96c2ab707a1d")
-	)
-	(junction
 		(at 191.77 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3147,6 +3370,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff2a5b30-f7b0-403a-9138-6a450141e567")
+	)
+	(wire
+		(pts
+			(xy 139.7 50.8) (xy 140.97 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0052ace5-da7e-4fab-837b-dc444d4c56a2")
 	)
 	(wire
 		(pts
@@ -3370,16 +3603,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 88.9) (xy 161.29 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "240388c5-6931-41c3-8563-d4d9f13cd6f5")
-	)
-	(wire
-		(pts
 			(xy 138.43 129.54) (xy 138.43 132.08)
 		)
 		(stroke
@@ -3550,6 +3773,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 88.9) (xy 161.29 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31b61690-719a-43e0-9e51-2125464149a9")
+	)
+	(wire
+		(pts
 			(xy 157.48 132.08) (xy 151.13 132.08)
 		)
 		(stroke
@@ -3577,6 +3810,16 @@
 			(type default)
 		)
 		(uuid "3706ad45-2120-48cd-9051-7ea36494f595")
+	)
+	(wire
+		(pts
+			(xy 243.84 40.64) (xy 220.98 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38049199-06fa-4b9d-9aaf-584747386cac")
 	)
 	(wire
 		(pts
@@ -3740,7 +3983,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 66.04) (xy 139.7 50.8)
+			(xy 139.7 50.8) (xy 139.7 66.04)
 		)
 		(stroke
 			(width 0)
@@ -3780,6 +4023,16 @@
 	)
 	(wire
 		(pts
+			(xy 243.84 59.69) (xy 243.84 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b0d187d-07c6-4bdb-916b-47a0cf67a8a8")
+	)
+	(wire
+		(pts
 			(xy 121.92 66.04) (xy 124.46 66.04)
 		)
 		(stroke
@@ -3797,16 +4050,6 @@
 			(type default)
 		)
 		(uuid "5ed0370f-90df-4b86-89fe-3dfa598d036e")
-	)
-	(wire
-		(pts
-			(xy 121.92 66.04) (xy 121.92 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5efe8954-bbb2-4289-bfcf-16660df3ca05")
 	)
 	(wire
 		(pts
@@ -3897,6 +4140,16 @@
 			(type default)
 		)
 		(uuid "683a429c-4e46-48dc-9d10-b21c3333f04c")
+	)
+	(wire
+		(pts
+			(xy 121.92 93.98) (xy 121.92 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c6c3834-d2cc-47f8-a0fc-febf5df7f177")
 	)
 	(wire
 		(pts
@@ -4310,6 +4563,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 93.98) (xy 121.92 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aea86011-7e30-48fb-a259-a49ff0d5db57")
+	)
+	(wire
+		(pts
 			(xy 170.18 132.08) (xy 180.34 132.08)
 		)
 		(stroke
@@ -4570,16 +4833,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 50.8) (xy 140.97 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6c7044f-3cfc-42b9-823c-2fe227d30cc7")
-	)
-	(wire
-		(pts
 			(xy 204.47 129.54) (xy 204.47 132.08)
 		)
 		(stroke
@@ -4597,16 +4850,6 @@
 			(type default)
 		)
 		(uuid "cbecc8d6-3b6c-4928-a80a-61053aaa7a4e")
-	)
-	(wire
-		(pts
-			(xy 186.69 40.64) (xy 186.69 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc103070-b880-49c7-9db6-3205b5d106f1")
 	)
 	(wire
 		(pts
@@ -4710,7 +4953,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 40.64) (xy 186.69 40.64)
+			(xy 121.92 40.64) (xy 189.23 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4981,6 +5224,28 @@
 		(uuid "0341c1d2-394c-4522-a7a6-47d0f99f19fd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 48.26 93.1552 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Feedback"
+		(shape input)
+		(at 220.98 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0393fadd-cf71-4904-bfe8-3cc6ee5bb5ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 209.1653 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5289,6 +5554,28 @@
 		(uuid "ca4e3618-c23d-4d67-9e5e-2f2c65cab47b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 57.15 41.4648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Feedback"
+		(shape input)
+		(at 189.23 40.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cae538c0-d0fb-457f-81c7-73fa7209abd5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 201.0447 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9398,6 +9685,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 139.7 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b57c9fc-9199-4a84-ba33-2a25a06b82c7")
+		(property "Reference" "#PWR07"
+			(at 139.7 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 139.192 103.632 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 139.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dfa86858-eafc-4975-b0b9-3e24eee575e3")
+		)
+		(instances
+			(project "MainBoard"
+				(path "/b7fe592a-70f1-4018-a1e6-02a0fad66ba8"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 257.81 64.77 90)
 		(mirror x)
@@ -10016,7 +10368,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Value" "1N4148"
@@ -10992,6 +11343,128 @@
 			(project "MainBoard"
 				(path "/b7fe592a-70f1-4018-a1e6-02a0fad66ba8"
 					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:BC557")
+		(at 137.16 93.98 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e824aafb-b239-40ac-b616-5cc4450f8cbf")
+		(property "Reference" "Q1"
+			(at 142.24 92.7099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC557"
+			(at 142.24 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 142.24 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC556BTA-D.pdf"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1A Ic, 45V Vce, PNP Small Signal Transistor, TO-92"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PNP"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "models/BC557.lib"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "BC557"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "GUMMELPOON"
+			(at 137.16 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f1c5f107-35b9-46f2-acd3-07fc6f7d1f83")
+		)
+		(pin "3"
+			(uuid "77397088-e047-4527-bd94-7af8a630bbe7")
+		)
+		(pin "1"
+			(uuid "64a4faf4-075c-467b-8cdc-1fb6fcc12008")
+		)
+		(instances
+			(project ""
+				(path "/b7fe592a-70f1-4018-a1e6-02a0fad66ba8"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
