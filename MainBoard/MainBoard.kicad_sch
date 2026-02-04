@@ -3317,7 +3317,7 @@
 		)
 		(uuid "d173ba8e-3505-492e-8a94-7d9bbbf8a1f9")
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_R7-Pad2_) + 0.25 v(Envelope) v(Output)\nplot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 1000ms\n.control\nrun\nplot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\nplot v(Net-_D9-K_) v(Net-_Q2-B_) + 0.25 v(Envelope) v(Output)\nplot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\nplot v(Net-_D6-A_) v(Net-_D6-K_) v(Net-_R9-Pad2_)\n.endc\n"
 		(exclude_from_sim no)
 		(at 17.272 156.718 0)
 		(effects
@@ -3425,6 +3425,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "52c27099-b500-451a-907b-c4dd32dcb836")
+	)
+	(junction
+		(at 147.32 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5eb423ac-f844-4b26-8949-02a501ef67aa")
 	)
 	(junction
 		(at 215.9 142.24)
@@ -4029,6 +4035,16 @@
 			(type default)
 		)
 		(uuid "31b61690-719a-43e0-9e51-2125464149a9")
+	)
+	(wire
+		(pts
+			(xy 147.32 44.45) (xy 147.32 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31c6d91e-03fa-48fd-98d5-cb6654104ac6")
 	)
 	(wire
 		(pts
@@ -5252,6 +5268,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 35.56) (xy 147.32 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e816c448-615a-439f-b4cc-f2ebd2ee0bac")
+	)
+	(wire
+		(pts
 			(xy 45.72 130.81) (xy 45.72 133.35)
 		)
 		(stroke
@@ -5512,6 +5538,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+v"
+		(shape input)
+		(at 147.32 35.56 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0ecf92da-5d7e-4d3b-ada3-fbc1d16145ae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 30.0348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -7729,6 +7777,75 @@
 			(project ""
 				(path "/b7fe592a-70f1-4018-a1e6-02a0fad66ba8"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "32265297-5c69-48fa-84ab-3fe1ee029b1b")
+		(property "Reference" "R16"
+			(at 145.288 41.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 149.606 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.098 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 147.32 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bac4978d-e17d-4f20-829e-e6cbcc81a3bd")
+		)
+		(pin "1"
+			(uuid "caa5140a-cef3-4749-a804-c1d17d4a1a23")
+		)
+		(instances
+			(project "MainBoard"
+				(path "/b7fe592a-70f1-4018-a1e6-02a0fad66ba8"
+					(reference "R16")
 					(unit 1)
 				)
 			)
