@@ -3317,7 +3317,7 @@
 		)
 		(uuid "d173ba8e-3505-492e-8a94-7d9bbbf8a1f9")
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 2500ms\n.control\nrun\n*plot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\n*plot v(Net-_D9-K_) v(Net-_Q2-B_) + 0.25 v(Envelope) v(Output)\n*plot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n*plot v(Net-_D6-A_) v(Net-_D6-K_) v(Net-_R9-Pad2_)\nplot v(Net-_Q2-B_) + 0.1 v(Net-_Q2-C_) + 0.2 v(Envelope) + 0.3\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 2500ms\n.control\nrun\n*plot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\n*plot v(Net-_D9-K_) v(Net-_Q2-B_) + 0.25 v(Envelope) v(Output)\n*plot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n*plot v(Net-_D6-A_) v(Net-_D6-K_) v(Net-_R9-Pad2_)\nplot v(Net-_Q2-B_) + 0.1 v(Net-_Q2-C_) + 0.2 v(Envelope) + 0.3 v(Net-_D9-k_)\n.endc\n"
 		(exclude_from_sim no)
 		(at 17.272 156.718 0)
 		(effects
@@ -3365,6 +3365,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0f8933aa-bcd7-48af-8926-bee03d9af35e")
+	)
+	(junction
+		(at 120.65 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fe82352-24b4-483e-b8f2-84996cd0ec66")
 	)
 	(junction
 		(at 193.04 88.9)
@@ -3515,12 +3521,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a637a4ce-ec09-40c8-b902-ce48c50ae1ba")
-	)
-	(junction
-		(at 121.92 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b01015be-6a0d-4176-b6e4-6c89f4225939")
 	)
 	(junction
 		(at 57.15 50.8)
@@ -3832,6 +3832,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 48.26) (xy 120.65 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d9e9e1c-f9ad-40dc-95c0-1fdde39fd538")
+	)
+	(wire
+		(pts
 			(xy 57.15 50.8) (xy 88.9 50.8)
 		)
 		(stroke
@@ -3912,7 +3922,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 48.26) (xy 121.92 48.26)
+			(xy 119.38 48.26) (xy 120.65 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3969,6 +3979,16 @@
 			(type default)
 		)
 		(uuid "2f224258-a841-469d-9261-4f5285b2eb79")
+	)
+	(wire
+		(pts
+			(xy 120.65 93.98) (xy 149.86 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f2a20a9-6bae-493b-bfd2-2f7cf01b4a2a")
 	)
 	(wire
 		(pts
@@ -4362,16 +4382,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 93.98) (xy 121.92 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c6c3834-d2cc-47f8-a0fc-febf5df7f177")
-	)
-	(wire
-		(pts
 			(xy 236.22 134.62) (xy 242.57 134.62)
 		)
 		(stroke
@@ -4519,6 +4529,16 @@
 			(type default)
 		)
 		(uuid "856eba5a-0ed7-4f2b-a5be-3f2b7b504194")
+	)
+	(wire
+		(pts
+			(xy 120.65 48.26) (xy 121.92 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85dbce01-3683-4bbe-bad7-c009392e8044")
 	)
 	(wire
 		(pts
@@ -4809,16 +4829,6 @@
 			(type default)
 		)
 		(uuid "ad1f1e8f-c7ba-4fe7-9bbd-d7487d88ca9e")
-	)
-	(wire
-		(pts
-			(xy 121.92 93.98) (xy 149.86 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aea86011-7e30-48fb-a259-a49ff0d5db57")
 	)
 	(wire
 		(pts
