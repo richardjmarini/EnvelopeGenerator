@@ -3317,7 +3317,7 @@
 		)
 		(uuid "d173ba8e-3505-492e-8a94-7d9bbbf8a1f9")
 	)
-	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 2500ms\n.control\nrun\n*plot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\n*plot v(Net-_D9-K_) v(Net-_Q2-B_) + 0.25 v(Envelope) v(Output)\n*plot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n*plot v(Net-_D6-A_) v(Net-_D6-K_) v(Net-_R9-Pad2_)\nplot v(Net-_Q2-B_) + 0.1 v(Net-_Q2-C_) + 0.2 v(Envelope) + 0.3 v(Net-_D9-k_)\n.endc\n"
+	(text ".options method=gear \n.options gmin=1e-9 cshunt=1e-12 \n.options reltol=1e-2 abstol=1e-9 vntol=1e-6 \n.options itl1=300 itl4=300 \n.options maxstep=100p\n.options temp=60\n.tran 100u 2500ms\n.control\nrun\n*plot v(Gate) v(Net-_D3-A_) + 0.25 v(Net-_U1A--_)  v(Net-_U1A--_, Net-_D3-A_) v(Comparator)\n*plot v(Net-_D9-K_) v(Net-_Q2-B_) + 0.25 v(Envelope) v(Output)\n*plot v(Envelope) v(Net-_U2C--_) + 0.25 v(Feedback) + 0.35 v(Output) + 0.45\n*plot v(Net-_D6-A_) v(Net-_D6-K_) v(Net-_R9-Pad2_)\nplot  v(Net-_Q1-B_) + 0.2 v(Envelope) + 0.3"
 		(exclude_from_sim no)
 		(at 17.272 156.718 0)
 		(effects
@@ -3437,6 +3437,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "610b8ece-e9ff-4e05-9749-bebd69fec37d")
+	)
+	(junction
+		(at 111.76 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "61a5bc68-4123-4d27-b4ca-41f26459d84c")
 	)
 	(junction
 		(at 170.18 152.4)
@@ -4262,6 +4268,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 38.1) (xy 139.7 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b0d5608-23d8-43c0-ad68-0d4831b45959")
+	)
+	(wire
+		(pts
 			(xy 121.92 66.04) (xy 124.46 66.04)
 		)
 		(stroke
@@ -4499,6 +4515,16 @@
 			(type default)
 		)
 		(uuid "811028a8-f80c-4e00-8ce0-a8c81c4a6452")
+	)
+	(wire
+		(pts
+			(xy 111.76 48.26) (xy 111.76 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81391520-c675-4e88-b599-9e0d7bb32ec0")
 	)
 	(wire
 		(pts
@@ -5866,28 +5892,6 @@
 			)
 		)
 	)
-	(global_label "Comparator"
-		(shape input)
-		(at 139.7 38.1 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d35c88b1-9014-47dd-8811-42e0ef83f1b8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 139.7 24.1084 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Envelope"
 		(shape input)
 		(at 207.01 44.45 0)
@@ -6903,7 +6907,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "50k"
 			(at 172.72 63.246 90)
 			(effects
 				(font
@@ -6974,7 +6978,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "Rtot=100k w=0.5"
+		(property "Sim.Params" "Rtot=100k w=0.2"
 			(at 172.72 66.04 0)
 			(effects
 				(font
@@ -7193,7 +7197,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "50k"
 			(at 199.39 86.36 90)
 			(effects
 				(font
@@ -11357,7 +11361,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "50k"
 			(at 199.644 71.882 90)
 			(effects
 				(font
